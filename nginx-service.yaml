@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cyber-knights-service
+spec:
+  selector:
+    app: cyber-knights
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080 # Optional: specify a port or let Kubernetes assign one
+  type: NodePort

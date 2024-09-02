@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cyber-knights-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cyber-knights
+  template:
+    metadata:
+      labels:
+        app: cyber-knights
+    spec:
+      containers:
+      - name: cyber-knights
+        image: nginx:latest   
+        ports:
+        - containerPort: 80
